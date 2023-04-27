@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --white-color: #f8f8f8;
+    --purple-color: #6b006a;
+    --success-color: #65b754;
+    --error-color: #ec225e;
+    --main-color: #222222;
+
+    --container-radius: 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--purple-color);
+    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#container {
+    background-color: var(--white-color);
+    border-radius: var(--container-radius);
+    box-shadow: 0 2px 10px rgba(0,0,54, .3);
+    width: 400px;
+    margin: 10px 0;
+}
+
+#form {
+    padding: 30px;
+}
+
+#form h1 {
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    border-bottom: solid 1px #ddd;
+    font-size: 28px;
+    text-align: center;
+    color: #555;
+}
+
+#form-message {
+    font-size: 18px;
+    margin: 0 0 10px;
+    padding: 0;
+    text-align: center;
+    display: block;
+    visibility: hidden;
+}
+
+#form-message.success {
+    color: var(--success-color);
+    visibility: visible;
+}
+
+.form-control {
+    position: relative;
+    padding: 5px 0;
+}
+
+.form-control label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    outline: 0;
+    display: block;
+}
+
+.form-control input {
+    width: 100%;
+    height: 45px;
+    border: solid 1px #ccc;
+    padding: 10px;
+    border-radius: var(--container-radius);
+}
+
+.form-control input:focus{
+    border: solid 2px var(--purple-color);
+}
+
+.form-control input::placeholder{
+    font-weight: 500;
+    color: #777;
+    font-size: 14px;
+}
+
+.form-control small {
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+    color: var(--error-color);
+    visibility: hidden;
+    transition: .2s;
+}
+
+.form-control.success input {
+    border-color: var(--success-color);
+    border-width: 2px;
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+    border-width: 2px;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+
+input#send{
+    position: relative;
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--purple-color);
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--container-radius);
+    margin: 10px auto 0;
+    cursor: pointer;
+    transition: .2s;
+}
+input#send:not(:disabled):active {
+    transform: scale(1.05);
+}
+
+
