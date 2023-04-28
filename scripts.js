@@ -8,6 +8,7 @@ const formControlInputs = form.querySelectorAll('.form-control input');
 
 let formData = {};
 
+// update form data object
 function updateFormData(field, value) {
   const name = field.name;
   if (typeof value === 'string') delete formData[name];
@@ -17,7 +18,7 @@ function updateFormData(field, value) {
 // remove form message
 function removeFormMessage() {
   if (formMessage.className.includes('success')) {
-    formMessage.classList = 'form-message';
+    formMessage.className = 'form-message';
     formMessage.innerText = '';
   }
 }
